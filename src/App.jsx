@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [MyComponent, setMyComponent] = useState(() => () => null);
-
-  useEffect(() => {
-    import("./MyComponent").then((module) => {
-      setMyComponent(() => module.default);
-      console.log(module)
+  const [Greeting, setGreeting] = useState(() => () => null);
+  const showGreeting = () => {
+    import("./Greeting").then((module) => {
+      setGreeting(() => module.default);
     });
-  }, []);
+  };
 
-  return <MyComponent />;
+  return (
+    <>
+      <button onClick={showGreeting}>Show Greeting</button>
+      <Greeting />
+    </>
+  );
 }
 
 export default App;

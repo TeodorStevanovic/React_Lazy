@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense } from "react";
+import MyPage from "./MyPage";
 
 function App() {
-  const [Greeting, setGreeting] = useState(() => () => null);
-  const showGreeting = () => {
-    import("./Greeting").then((module) => {
-      setGreeting(() => module.default);
-    });
-  };
-
   return (
-    <>
-      <button onClick={showGreeting}>Show Greeting</button>
-      <Greeting />
-    </>
+    <Suspense fallback={"loading..."}>
+      <MyPage />
+    </Suspense>
   );
 }
 

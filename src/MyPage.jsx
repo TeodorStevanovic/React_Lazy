@@ -1,6 +1,14 @@
 import React, { lazy } from "react";
 
-const MyFeature = lazy(() => import("./MyFeature"));
+const MyFeature = lazy(
+  () =>
+    new Promise((resolve) => {
+      setTimeout(async () => {
+        const module = await import("./MyFeature");
+        resolve(module);
+      }, 3000);
+    })
+);
 
 const MyPage = () => {
   return (

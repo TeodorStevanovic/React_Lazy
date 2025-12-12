@@ -1,10 +1,10 @@
 import React, { lazy } from "react";
 
-const MyFeature = lazy(
+const Users = lazy(
   () =>
     new Promise((resolve) => {
       setTimeout(async () => {
-        const module = await import("./MyFeature");
+        const module = await import("./Users");
         resolve(module);
       }, 3000);
     })
@@ -14,7 +14,7 @@ const MyPage = () => {
   return (
     <>
       <h1>My Page</h1>
-      <MyFeature />
+      <Users />
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import { FadeLoader } from "react-spinners";
+import { ClipLoader} from "react-spinners";
 import MyPage from "./MyPage";
 
 function App() {
   return (
-    <Suspense fallback={<FadeLoader color={"lightblue"} size={150} />}>
+    <Suspense fallback={<ClipLoader color={"lightblue"} size={150} />}>
       <MyPage />
     </Suspense>
   );

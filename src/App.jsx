@@ -1,5 +1,6 @@
 import React, { Suspense, useState, lazy } from "react";
 import { ClipLoader } from "react-spinners";
+import DaymanicImport from "./Daynamic_Import/DaymanicImport";
 
 const First = lazy(() => import("./First/FirstMain"));
 const Second = lazy(() => import("./Second/SecondMain"));
@@ -20,21 +21,7 @@ function App() {
 
   return (
     <>
-      <label>
-        Loaded Component:{" "}
-        <select
-          value={component}
-          onChange={(e) => setComponent(e.target.value)}
-        >
-          <option value="">None</option>
-          <option value="first">First</option>
-          <option value="second">Second</option>
-        </select>
-      </label>
-
-      <Suspense fallback={<ClipLoader />}>
-        <ShowComponent name={component} />
-      </Suspense>
+      <DaymanicImport /> <hr></hr>
     </>
   );
 }

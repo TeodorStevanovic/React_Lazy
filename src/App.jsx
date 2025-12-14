@@ -1,6 +1,7 @@
 import React, { Suspense, useState, lazy } from "react";
 import { ClipLoader } from "react-spinners";
 import DaymanicImport from "./Daynamic_Import/DaymanicImport";
+import LazyComponent from "./Lazy_Component/LazyComponent";
 
 const First = lazy(() => import("./First/FirstMain"));
 const Second = lazy(() => import("./Second/SecondMain"));
@@ -21,7 +22,8 @@ function App() {
 
   return (
     <>
-      <DaymanicImport /> <hr></hr>
+      <DaymanicImport /> <hr />
+      <LazyComponent /> <hr />
     </>
   );
 }

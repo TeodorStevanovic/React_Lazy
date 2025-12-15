@@ -2,20 +2,7 @@ import React, { Suspense, useState, lazy } from "react";
 import { ClipLoader } from "react-spinners";
 import DaymanicImport from "./Daynamic_Import/DaymanicImport";
 import LazyComponent from "./Lazy_Component/LazyComponent";
-
-const First = lazy(() => import("./First/FirstMain"));
-const Second = lazy(() => import("./Second/SecondMain"));
-
-const ShowComponent = ({ name }) => {
-  switch (name) {
-    case "first":
-      return <First />;
-    case "second":
-      return <Second />;
-    default:
-      return null;
-  }
-};
+import AvoidLazyComponent from "./Avoid_Lazy_Component/AvoidLazyComponent";
 
 function App() {
   const [component, setComponent] = useState("");
@@ -24,6 +11,7 @@ function App() {
     <>
       <DaymanicImport /> <hr />
       <LazyComponent /> <hr />
+      <AvoidLazyComponent /> <hr />
     </>
   );
 }
